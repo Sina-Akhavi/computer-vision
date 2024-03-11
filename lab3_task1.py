@@ -29,32 +29,21 @@ while True:
     if ret == False:  # end of video (or error)
         break
 
-    # write the current frame I
-    # out.write(I)
-
-
-
-
 frame_lists.pop()
 frame_lists = frame_lists[::-1]
-# print("------------------- Frame_list -------------------")
-# print("DIM1:", len(frame_lists))
-# print("DIM2:", len(frame_lists[0]))
-# print("Frame 0:", frame_lists[0])
-# print("Last Frame:", frame_lists[-1])
-
 
 current_frame_index = 0
 num_frames = len(frame_lists)
 while current_frame_index < num_frames:
-    cv2.imshow("frame_list", frame_lists[current_frame_index])
+    frame = frame_lists[current_frame_index]
+    cv2.imshow("frame_list", frame)
 
     key = cv2.waitKey(33) # ~ 30 frames per second
     if key & 0xFF == ord('q'):
         break
 
+    out.write(frame)
     current_frame_index += 1
-
 
 cap.release()
 out.release()
