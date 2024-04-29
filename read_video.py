@@ -23,8 +23,8 @@ while True:
     cv2.imshow('win1',I)
     
     # key = cv2.waitKey(33) # ~ 30 frames per second
-    # key = cv2.waitKey(300) # ~ 30 frames per second
-    # key = cv2.waitKey(3) # ~ 30 frames per second
+    # key = cv2.waitKey(300)
+    # key = cv2.waitKey(3)
 
     key = cv2.waitKey()
     # key = cv2.waitKey(0)
