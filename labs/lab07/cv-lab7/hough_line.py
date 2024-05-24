@@ -25,9 +25,9 @@ E = cv2.Canny(G,100,200) # find the edges
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
 
-min_votes = 190 # mininum votes to be considered a line
-distance_resolution = 1 # 1 pixel: resolution of the parameter "rho" (distance to origin)
-angle_resolution = 2 * np.pi/180 # pi/180 radians: resolution (bin size) of the parameter "theta"
+min_votes = 1500 # mininum votes to be considered a line
+distance_resolution = 20 # 1 pixel: resolution of the parameter "rho" (distance to origin)
+angle_resolution = np.pi/180 # pi/180 radians: resolution (bin size) of the parameter "theta"
 L = cv2.HoughLines(E,distance_resolution,angle_resolution,min_votes)
 
 # draw the lines
